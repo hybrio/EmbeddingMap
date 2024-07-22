@@ -1,0 +1,19 @@
+{
+  "name": "embeddingmap",
+  "version": "1.0.0",
+  "description": "a tool for explaining embeddings",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "ollama": "^0.5.6",
+    "tsne-js": "^1.0.3"
+  }
+}
