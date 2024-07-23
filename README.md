@@ -19,9 +19,15 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 then you will need to pull the `nomic-embed-text` library
 
-```ollama pull nomic-embed-text```
+```
+ollama pull nomic-embed-text
+```
 
 finally run the webserver
-```npm install```
+```
+npm install
+```
 
-```npm run start```
+```
+npm run start
+```
