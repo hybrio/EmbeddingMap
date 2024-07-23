@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="row">
+		<div class="listBox">
+		    <h1>Text Similarity Graph</h1>
+		    <input type="text" id="textInput" placeholder="Add new text">
+		    <button onclick="addText()">Submit</button>
+		    <ul id="taskList"></ul>
+	    </div>
+	    <div class="chartBox">
+	        <canvas id="myChart"></canvas>
+	    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="renderChart.js"></script>
+    <script src="functionality.js"></script>
+</body>

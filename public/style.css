@@ -1,0 +1,86 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@600&display=swap');
+
+:root {
+  --green: #b8d953;
+  --lilac: #b2b2eb;
+  --pink: #bb86e9;
+  --dark-green: #529a91;
+  --peach: #fe96b7;
+  --black: #191819;
+  --grey: #2a292a;
+  --white: #d9d9d9;
+
+}
+
+body {
+  background: var(--white);
+  font-family: 'Onest', sans-serif;
+}
+
+input {
+  border: 2px solid var(--black);
+  background: unset;
+  padding: 0.5rem;
+  color: white;
+}
+
+input::placeholder {
+  color: black;
+}
+
+span.delete-btn{
+    cursor: pointer;
+}
+
+.delete-btn{
+    cursor: pointer;
+}
+
+span.delete-btn::hover {
+  background: white;
+}
+
+
+button {
+  background: var(--black);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--black);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  
+}
+
+li span {
+  margin: 0 10px 0 5px;
+  
+}
+
+li {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  max-width: 300px;
+  margin: 0;
+}
+
+body{
+  height: 100%;
+  width: 100%;
+}
+.chartBox{
+  height: 100%;
+  width: 100%;
+}
+.listBox{
+  min-width: 350px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
