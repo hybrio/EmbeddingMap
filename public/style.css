@@ -22,11 +22,7 @@ input {
   border: 2px solid var(--black);
   background: unset;
   padding: 0.5rem;
-  color: white;
-}
-
-input::placeholder {
-  color: black;
+  color: var(--black);
 }
 
 span.delete-btn{
@@ -35,10 +31,6 @@ span.delete-btn{
 
 .delete-btn{
     cursor: pointer;
-}
-
-span.delete-btn::hover {
-  background: white;
 }
 
 
