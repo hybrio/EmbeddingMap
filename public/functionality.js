@@ -1,55 +1,53 @@
 function reloadGraph(datapoints, labels){
-  chart.data = {
-      datasets: datapoints,
-  };
+  chart.data = datapoints;
   chart.update();
 }
 
-function addText() {
-    const input = document.getElementById('textInput');
-    const taskList = document.getElementById('taskList');
+function addItem(type, graphType) {
+    const input = document.getElementById(type+"Input");
+    const taskList = document.getElementById(type+"List");
 
     if (input.value.trim() === '') {
         alert('Please enter some text!');
         return;
     }
 
-    fetch("http://localhost:3000/api/add-word", {
+    fetch("http://localhost:3000/api/add-"+type, {
             method: "POST",
             body: JSON.stringify({
-                word: input.value
+                input: input.value
             }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
             }
         })
         .then((response) => response.json())
-        .then((json) => renderList(json));
+        .then((json) => renderList(json, type, graphType));
 
 
     input.value = '';
 }
 
-function removeText(item) {
-    const taskList = document.getElementById('taskList');
-    fetch("http://localhost:3000/api/del-word", {
+function removeItem(item, type, graphType) {
+    const taskList = document.getElementById(type+"List");
+    fetch("http://localhost:3000/api/del-"+type, {
             method: "POST",
             body: JSON.stringify({
-                word: item
+                input: item
             }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
             }
         })
         .then((response) => response.json())
-        .then((json) => renderList(json));
+        .then((json) => renderList(json, type, graphType));
 }
 
-function renderList(list) {
-    const taskList = document.getElementById('taskList');
+function renderList(list, type, graphType) {
+    const taskList = document.getElementById(type+"List");
     taskList.replaceChildren()
     if(list.length > 0){      
-      fetch("http://localhost:3000/api/generate-plot")
+      fetch("http://localhost:3000/api/generate-"+graphType+"-plot")
             .then((response) => response.json())
             .then((json) => reloadGraph(json));
     }
@@ -60,7 +58,7 @@ function renderList(list) {
         deleteBtn.textContent = '✖';
         deleteBtn.className = 'delete-btn';
         deleteBtn.onclick = function() {
-            removeText(item)
+            removeItem(item,type, graphType)
         };
 
         //create list item
@@ -77,17 +75,5 @@ function renderList(list) {
         taskList.appendChild(newLi);
     })
 }
-
-
-
-document.getElementById('textInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        addText();
-    }
-});
-
-fetch("http://localhost:3000/api/words")
-    .then((response) => response.json())
-    .then((json) => renderList(json));
 
 

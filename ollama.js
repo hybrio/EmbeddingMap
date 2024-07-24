@@ -1,21 +1,21 @@
 import ollama from 'ollama'
 
-export function embed(words, word, set = false) {
-  if (!words.has(word)) {
-    try {
-        const response = await ollama.embeddings({
-            "model": "nomic-embed-text",
-            "prompt": word,
-        })
-        if(set){
-          return words.set(word, response.embedding)
-        } else {
-          return words
-        }
-        
-    } catch (error) {
-        res.status(500).send({ error: error });
-        return null
-    }
+// generates embedding for word then stores it in provided word map
+export async function storeEmbedding(wordMap, word) {
+  if (!wordMap.has(word)) {
+    let embedding = await generateEmbedding(word)
+    wordMap.set(word, embedding)
+  }
+}
+
+export async function generateEmbedding(word){
+  try {
+    const response = await ollama.embeddings({
+        "model": "nomic-embed-text",
+        "prompt": word,
+    })
+    return response.embedding
+  } catch (error) {
+    return error
   }
 }

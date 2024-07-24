@@ -64,8 +64,8 @@ body{
   width: 100%;
 }
 .chartBox{
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 .listBox{
   min-width: 350px;

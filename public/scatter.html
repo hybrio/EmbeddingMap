@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="row">
+		<div class="listBox">
+		    <h1>Text Similarity Graph</h1>
+		    <input type="text" id="wordInput" placeholder="Add new word">
+		    <button onclick="addItem('word', 'scatter')">Submit</button>
+		    <ul id="wordList"></ul>
+	    </div>
+	    <div class="chartBox">
+	        <canvas id="myChart"></canvas>
+	    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="renderScatterChart.js"></script>
+    <script src="functionality.js"></script>
+    <script src="scatter.js"></script>
+</body>
