@@ -43,6 +43,10 @@ export async function generateScatterGraphData(words){
 
 export async function generateRadarGraphData(labels,words){
 
+    if(labels.size < 3 || words.size < 1){
+        return {}
+    }
+
     let graphData = {
         labels: [...labels.keys()],
         datasets: []
