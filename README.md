@@ -1,29 +1,21 @@
 # EmbeddingMap
 a tool for graphing text embedding data
 
-## Setup 
-first you will need to download ollama
-### macOS
+## Setup
 
-[Download](https://ollama.com/download/Ollama-darwin.zip)
+1. first you will need to download ollama
 
-### Windows preview
+[Mac Download](https://ollama.com/download/Ollama-darwin.zip)
 
-[Download](https://ollama.com/download/OllamaSetup.exe)
+[Windows Download](https://ollama.com/download/OllamaSetup.exe)
 
-### Linux
-
-```
-curl -fsSL https://ollama.com/install.sh | sh
-```
-
-then you will need to pull the `nomic-embed-text` library
+2. then you will need to pull the `nomic-embed-text` library
 
 ```
 ollama pull nomic-embed-text
 ```
 
-finally run the webserver
+3. finally run the webserver
 ```
 npm install
 ```
