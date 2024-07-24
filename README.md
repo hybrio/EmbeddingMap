@@ -1,7 +1,7 @@
 # EmbeddingMap
 a tool for graphically comparing text embedding data for different words
 
-<img width="1512" alt="image" src="https://github.com/user-attachments/assets/f209ebed-6d2a-44c0-8e46-f70a2c96bd8f">
+<img width="512" alt="image" src="https://github.com/user-attachments/assets/f209ebed-6d2a-44c0-8e46-f70a2c96bd8f">
 
 
 ## Setup
