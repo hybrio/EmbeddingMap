@@ -5,9 +5,8 @@ a tool for graphing text embedding data
 
 1. first you will need to download ollama
 
-[Mac Download](https://ollama.com/download/Ollama-darwin.zip)
-
-[Windows Download](https://ollama.com/download/OllamaSetup.exe)
+- [Mac Download](https://ollama.com/download/Ollama-darwin.zip)
+- [Windows Download](https://ollama.com/download/OllamaSetup.exe)
 
 2. then you will need to pull the `nomic-embed-text` library
 
